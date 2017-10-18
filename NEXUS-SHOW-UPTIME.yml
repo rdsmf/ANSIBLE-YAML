@@ -1,0 +1,18 @@
+---
+
+- name: NEXUS SHOW UPTIME
+  hosts: nxos-suw-lab
+  connection: local
+  gather_facts: no
+
+
+  tasks:
+
+    # Get SWITCH UPTIME
+    - nxos_command: command='show system uptime' host={{ inventory_hostname }} text=false type=show username={{ ansible_ssh_user }} password={{ ansible_ssh_pass }}
+      register: my_uptime
+
+    - debug: var=my_uptime
+
+
+

@@ -1,0 +1,16 @@
+---
+
+- name: GET NXOS VLANS
+  hosts: nxos-suw-lab
+  gather_facts: no
+
+  tasks:
+
+  - nxos_command: command='show vlan' host={{ inventory_hostname }} type=show username={{ ansible_ssh_user }} password={{ ansible_ssh_pass }}
+    register: my_vlans
+
+  - debug: var=my_vlans
+
+
+
+

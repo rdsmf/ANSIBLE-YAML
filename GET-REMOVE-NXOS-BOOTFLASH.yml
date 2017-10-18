@@ -1,0 +1,17 @@
+---
+
+- name: GET-REMOVE BOOTFLASH
+  hosts: nxos-suw-lab
+  gather_facts: no
+
+  tasks:
+
+    - name: GET-REMOVE FILE OR IMAGE
+      nxos_dir: path='bootflash:nxos.7.0.3.I2.2e.bin' host={{ inventory_hostname }} state=absent username={{ ansible_ssh_user }} password={{ ansible_ssh_pass }}
+
+
+
+
+
+
+

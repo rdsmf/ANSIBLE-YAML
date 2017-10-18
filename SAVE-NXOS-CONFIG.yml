@@ -1,0 +1,16 @@
+---
+
+- name: NXOS SAVE CONFIG
+  hosts: nxos-suw-lab
+  connection: local
+  gather_facts: no
+
+
+  tasks:
+
+    # Save NXOS config to folder
+    - ntc_save_config: platform=cisco_nxos_nxapi local_file=/etc/ansible/backups/{{ inventory_hostname }}.cfg host={{ inventory_hostname }} username={{ansible_ssh_user }} password={{ ansible_ssh_pass }}
+      register: my_config
+
+    - debug: var=my_config
+

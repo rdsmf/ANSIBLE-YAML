@@ -1,0 +1,23 @@
+---
+
+- name: copy NXOS Image File to Bootflash
+  hosts: nxos-suw-lab
+  connection: local
+  gather_facts: no
+
+
+
+
+  tasks:
+
+
+  # NXOS file copy
+  - name: NXOS FILE COPY TO BOOTFLASH
+    nxos_file_copy: source_file=/home/rdsmf/Cisco/n9000-epld.7.0.3.I2.2e.img host={{ inventory_hostname }} username={{ ansible_ssh_user }} password={{ ansible_ssh_pass }}
+    register: results
+
+  
+
+
+
+

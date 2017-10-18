@@ -1,0 +1,14 @@
+---
+
+- name: GET NXOS ENVIRONEMNT
+  hosts: nxos-suw-lab
+  gather_facts: no
+
+  tasks:
+
+  - nxos_command: command='show environment' host={{ inventory_hostname }} type=show username={{ ansible_ssh_user }} password={{ ansible_ssh_pass }}
+    register: my_environment
+
+  - debug: var=my_environment
+
+

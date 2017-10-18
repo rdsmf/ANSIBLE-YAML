@@ -1,0 +1,23 @@
+---
+
+- name: GET CDP NEIGHBORS
+  hosts: nxos-suw-lab
+  gather_facts: no
+
+  tasks:
+
+    - name: GET CDP
+      nxos_get_neighbors: type=cdp host={{ inventory_hostname }} username={{ ansible_ssh_user }} password={{ansible_ssh_pass }}
+      register: my_neighbors
+
+    - debug: var=my_neighbors
+
+
+
+
+
+
+
+
+
+

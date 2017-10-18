@@ -1,0 +1,22 @@
+---
+
+- name: NXOS - PING
+  hosts: nxos-suw-lab
+  gather_facts: no
+
+  tasks:
+
+    - name: ENSURE NXOS MGT PING
+      nxos_ping: dest={{ item }} vrf=management host={{ inventory_hostname }} count=2 username={{ ansible_ssh_user }} password={{ ansible_ssh_pass }}
+      with_items:
+        - 8.8.8.8
+
+
+
+
+
+
+
+
+
+

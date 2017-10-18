@@ -1,0 +1,65 @@
+TEST HOST CONNECIVITY WITH ANSIBLE
+==================================
+sudo ansible all -m ping
+
+LIST ANSIBLE HOST INVENTORY
+===========================
+sudo ansible --list-hosts all
+
+LIST ANSIBLE PATH TO CONFIG FILE
+================================
+sudo ansible --version
+
+ANSIBLE COMMAND TO UPGRADE LINUX HOSTS
+======================================
+sudo ansible all -m shell (or "command") -a "sudo apt-get update; sudo apt-get -y upgrade; sudo apt-get dist-upgrade" -K -b --limit suw-lab-linux-hosts
+
+ANSIBLE COMMAND TO PING A DESTINATION IP ON ALL NEXUS SWITCHES (MGT VRF)
+========================================================================
+sudo ansible-playbook -v -i /etc/ansible/hosts NEXUS-MGT-PING.yml
+
+ANSIBLE COMMAND TO RUN 'Show Version' ON ALL NEXUS SWITCHES
+===========================================================
+sudo ansible-playbook -v -i /etc/ansible/hosts NEXUS-SHOW-VERSION.yml
+
+ANSIBLE COMMAND TO RUN 'Show CDP Neighbors' ON ALL NEXUS SWITCHES
+================================================================
+sudo ansible-playbook -v -i /etc/ansible/hosts GET-CDP-NEIGHBORS.yml
+
+ANSIBLE COMMAND TO RUN 'Show System Uptime' ON ALL NEXUS SWITCHES
+================================================================
+sudo ansible-playbook -v -i /etc/ansible/hosts NEXUS-SHOW-UPTIME.yml
+
+ANSIBLE COMMAND TO RUN 'Show Vlan Allocation' ON ALL NEXUS SWITCHES
+===================================================================
+sudo ansible-playbook -vvv GET-NXOS-VLAN-ALLOCATION.yml
+
+ANSIBLE COMMAND TO RUN 'Show VNI Allocation' ON ALL NEXUS SWITCHES
+===================================================================
+sudo ansible-playbook -vvv NEXUS-SHOW-VNI-ALLOCATION.yml
+
+ANSIBLE COMMAND TO RUN 'Show Environment' ON ALL NEXUS SWITCHES
+===================================================================
+sudo ansible-playbook -vvv SHOW-NXOS-ENVIRONMENT.yml
+
+ANSIBLE COMMAND TO COPY NXOS IMAGE TO ALL NEXUS SWITCHES
+========================================================
+sudo ansible-playbook -vvv NXOS-COPY-BOOTFLASH.yml
+
+ANSIBLE COMMAND TO BACKUP NXOS CONFIG FROM ALL NEXUS SWITCHES
+=============================================================
+sudo ansible-playbook -vvv SAVE-NXOS-CONFIG.yml
+
+
+
+
+
+
+ 
+
+
+
+
+      
+
+
