@@ -10,9 +10,13 @@ LIST ANSIBLE PATH TO CONFIG FILE
 ================================
 sudo ansible --version
 
-ANSIBLE COMMAND TO UPGRADE LINUX HOSTS
-======================================
-sudo ansible all -m shell (or "command") -a "sudo apt-get update; sudo apt-get -y upgrade; sudo apt-get dist-upgrade" -K -b --limit suw-lab-linux-hosts
+ANSIBLE COMMAND TO UPGRADE LINUX HOSTS VIA SSH
+===============================================
+sudo ansible all -m shell (or "command") -a "sudo apt-get update; sudo apt-get -y upgrade; sudo apt-get dist-upgrade" -K -b --limit suw-lab-linux-hosts (group name in hosts file)
+
+ANSIBLE COMMAND TO SEND COMMANDS TO NEXUS SWITCH VIA SSH
+========================================================
+sudo ansible all -i hosts -m raw -a "show ip arp" --limit cloud-leaf (group name in hosts file)
 
 ANSIBLE COMMAND TO PING A DESTINATION IP ON ALL NEXUS SWITCHES (MGT VRF)
 ========================================================================
