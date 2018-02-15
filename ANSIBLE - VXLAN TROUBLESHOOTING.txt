@@ -1,0 +1,25 @@
+ANSIBLE COMMAND TO SEND COMMANDS TO NEXUS SWITCH VIA SSH
+========================================================
+
+sudo ansible all -i hosts -m raw -a "show nve vxlan-params" --limit cloud-leaf (group name in hosts file)
+
+sudo ansible all -i hosts -m raw -a "show nve interface" --limit cloud-leaf (group name in hosts file)
+
+sudo ansible all -i hosts -m raw -a "show interface nve 1" --limit cloud-leaf (group name in hosts file)
+
+sudo ansible all -i hosts -m raw -a "show nve peers" --limit cloud-leaf (group name in hosts file)
+
+sudo ansible all -i hosts -m raw -a "show nve internal platform interface nve1 detail" --limit cloud-leaf (group name in hosts file)
+
+sudo ansible all -i hosts -m raw -a "show vxlan" --limit cloud-leaf (group name in hosts file)
+
+sudo ansible all -i hosts -m raw -a "show mac address | inc 'nve1'" --limit cloud-leaf (group name in hosts file)
+
+sudo ansible all -i hosts -m raw -a "show l2route evpn mac all" --limit cloud-leaf (group name in hosts file)
+
+sudo ansible all -i hosts -m raw -a "show bgp l2vpn evpn" --limit cloud-leaf (group name in hosts file)
+
+sudo ansible all -i hosts -m raw -a "show bgp l2vpn evpn neighbors <bgp neighbor> advertised-routes" --limit cloud-leaf (group name in hosts file)
+
+sudo ansible all -i hosts -m raw -a "show ip bgp vrf <vrf name>" --limit cloud-leaf (group name in hosts file)
+
